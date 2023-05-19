@@ -65,9 +65,9 @@ dataset = torch.utils.data.TensorDataset(src_data, tgt_data)
 
 # 各データセットのサンプル数を決定
 # train : val: test = 60%　: 20% : 20%
-n_train = int(len(dataset) * 0.2)
-n_val = int(len(dataset) * 0.04) + n_train
-n_test = int(len(dataset) * 0.04) + n_val
+n_train = int(len(dataset) * 0.6)
+n_val = int(len(dataset) * 0.2) + n_train
+n_test = int(len(dataset) * 0.2) + n_val
 indices = np.arange(len(dataset))
 
 train = torch.utils.data.Subset(dataset, indices[:n_train])
