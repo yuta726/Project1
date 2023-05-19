@@ -151,8 +151,6 @@ def evaluate(flag, model, data_provider, criterion, device):
   actual = actual.to('cpu').detach().numpy().copy()
   
   if flag=='test':
-    actual = torch.cat((src, tgt), dim=1)
-    result = torch.cat((src, output), dim=1)
     plt.plot(actual,color='red',alpha=0.7)
     plt.plot(result,color='black',linewidth=1.0)
     plt.show()
